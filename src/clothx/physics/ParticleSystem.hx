@@ -15,6 +15,7 @@ import clothx.physics.Particle;
 import clothx.physics.Spring;
 import clothx.physics.Attraction;
 import clothx.physics.Force;
+
 import flash.geom.Vector3D;
 
 class ParticleSystem {

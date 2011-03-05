@@ -11,6 +11,7 @@
 package clothx.physics;
 
 import clothx.physics.Particle;
+
 import flash.geom.Vector3D;
 
 class Attraction implements Force {

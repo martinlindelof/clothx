@@ -10,9 +10,10 @@
 
 package clothx.physics;
 
-import flash.geom.Vector3D;
 import clothx.physics.ParticleSystem;
 import clothx.physics.Particle;
+
+import flash.geom.Vector3D;
 
 class RungeKuttaIntegrator implements Integrator {
 

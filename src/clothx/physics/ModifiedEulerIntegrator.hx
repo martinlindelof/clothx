@@ -10,9 +10,10 @@
 
 package clothx.physics;
 
-import flash.geom.Vector3D;
 import clothx.physics.ParticleSystem;
 import clothx.physics.Integrator;
+
+import flash.geom.Vector3D;
 
 class ModifiedEulerIntegrator implements Integrator {
 

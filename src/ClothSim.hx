@@ -29,7 +29,7 @@ class ClothSim extends Sprite {
         flash.Lib.current.addChild(this);
         particles = new Array();
         s = new ParticleSystem(new Vector3D(0, 3.2, 0), .06);
-        
+        s.setIntegrator(ParticleSystem.RUNGE_KUTTA);
         var sx : Int;
         sx = 200;
         var sy : Int;

@@ -8,7 +8,6 @@ import clothx.physics.Particle;
 import clothx.physics.ParticleSystem;
 import clothx.physics.RungeKuttaIntegrator;
 import clothx.physics.Spring;
-import clothx.geom.Vector3D;
 
 import flash.Lib;
 import flash.events.Event;
@@ -30,8 +29,9 @@ class Test extends Sprite{
         super();
         flash.Lib.current.addChild(this);
         g = this.graphics;
-        trace("test");
         s = new ParticleSystem();
+        
+        // here you are, 
         
     }
 }

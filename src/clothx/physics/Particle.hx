@@ -26,7 +26,7 @@ class Particle {
 	public function new(mass : Float, ?position : Vector3D):Void
 	{
 		this.mass = mass;
-		this.position = (position!=null)? position : new Vector3D();
+		this.position = (position!=null) ? position : new Vector3D();
 		
 		velocity = new Vector3D();
 		force = new Vector3D();

@@ -28,8 +28,6 @@ class ModifiedEulerIntegrator implements Integrator {
 	{
 		 var particles : Array<Particle>;
 		 particles = s.particles;
-		 var p_length : Int;
-		 p_length = particles.length;
 		 
 		 s.clearForces();
 		 s.applyForces();
@@ -39,7 +37,7 @@ class ModifiedEulerIntegrator implements Integrator {
 		 var one_over_t : Float;
 		 one_over_t = 1/t;
 		 
-		 for(i in 0...p_length)
+		 for(i in 0...particles.length)
 		 {
 		 	var p : Particle;
 		 	p = particles[i];

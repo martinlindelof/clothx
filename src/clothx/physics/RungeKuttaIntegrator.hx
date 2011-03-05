@@ -63,32 +63,30 @@ class RungeKuttaIntegrator implements Integrator {
 		}
 	}
 	
+	
+	var particles : Array<Particle>;
+    var p : Particle;
+    var originalPosition : Vector3D;
+    var originalVelocity : Vector3D;
+    
+    var k1Velocity : Vector3D;
+    var k2Velocity : Vector3D;
+    var k3Velocity : Vector3D;
+    var k4Velocity : Vector3D;
+    
+    var k1Force : Vector3D;
+    var k2Force : Vector3D;
+    var k3Force : Vector3D;
+    var k4Force : Vector3D;
+	
 	public function step(t : Float):Void
 	{
 	   
-		var particles : Array<Particle>;
 		particles = s.particles;
-		var i : Int;
-		var p_length : Int;
-		p_length = particles.length;
-		var p : Particle;
-		var originalPosition : Vector3D;
-		var originalVelocity : Vector3D;
-		
-		var k1Velocity : Vector3D;
-		var k2Velocity : Vector3D;
-		var k3Velocity : Vector3D;
-		var k4Velocity : Vector3D;
-		
-		var k1Force : Vector3D;
-		var k2Force : Vector3D;
-		var k3Force : Vector3D;
-		var k4Force : Vector3D;
-		
 		
 		// k1: save original, apply forces, result is k1
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -105,7 +103,7 @@ class RungeKuttaIntegrator implements Integrator {
 		
 		s.applyForces();
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -124,7 +122,7 @@ class RungeKuttaIntegrator implements Integrator {
         	
 		// k2 : use k1, apply forces, result is k2
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -149,7 +147,7 @@ class RungeKuttaIntegrator implements Integrator {
 		
 		s.applyForces();
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -166,7 +164,7 @@ class RungeKuttaIntegrator implements Integrator {
 		
 		// k3 : use k2, apply forces, result is k3
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -190,7 +188,7 @@ class RungeKuttaIntegrator implements Integrator {
 		
 		s.applyForces();
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -207,7 +205,7 @@ class RungeKuttaIntegrator implements Integrator {
 		
 		// k4 : use k3, apply forces, result is k4
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -231,7 +229,7 @@ class RungeKuttaIntegrator implements Integrator {
 		
 		s.applyForces();
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			
@@ -249,7 +247,7 @@ class RungeKuttaIntegrator implements Integrator {
 		// update position and velocity
 		// based on intermediate forces
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			p = particles[i];
 			p.age += t;

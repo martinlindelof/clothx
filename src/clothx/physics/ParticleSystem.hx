@@ -46,9 +46,6 @@ class ParticleSystem {
 		custom = new Array();
 		
 		this.gravity = (gravity!=null) ? gravity : new Vector3D();
-		
-		//trace(gravity);
-		
 		this.drag = drag;
 	}
 	
@@ -117,25 +114,13 @@ class ParticleSystem {
 	
 	public function applyForces():Void
 	{
-		var i : Int;
-		var p_length : Int;
-		p_length = particles.length;
-		var s_length : Int;
-		s_length = springs.length;
-		var a_length : Int;
-		a_length = attractions.length;
-		var c_length : Int;
-		c_length = custom.length;
-		
-		//trace(gravity);
-		
 		if(gravity.x != 0 || gravity.y != 0 || gravity.x != 0) // not gravity.z ?
 		{
-			for(i in 0...p_length)
+			for(i in 0...particles.length)
 				particles[i].force = particles[i].force.add(gravity);
 		}
 		
-		for(i in 0...p_length)
+		for(i in 0...particles.length)
 		{
 			var p : Particle;
 			p = particles[i];
@@ -145,17 +130,14 @@ class ParticleSystem {
 			p.force = p.force.add(vdrag);
 		}
 		
-		for(i in 0...s_length) springs[i].apply();
-		for(i in 0...a_length) attractions[i].apply();
-		for(i in 0...c_length) custom[i].apply();
+		for(i in 0...springs.length) springs[i].apply();
+		for(i in 0...attractions.length) attractions[i].apply();
+		for(i in 0...custom.length) custom[i].apply();
 	}
 	
 	public function clearForces():Void
 	{
-		var p_length : Int;
-		p_length = particles.length;
-		
-		for( i in 0...p_length)
+		for( i in 0...particles.length)
 		{
 			var p : Particle;
 			p = particles[i];
@@ -218,12 +200,10 @@ class ParticleSystem {
 	
 	public function removeCustomForceByReference(f : Force):Bool
 	{
-		var i : Int;
 		var n : Int;
 		n = -1;
-		var c_length : Int;
-		c_length = custom.length;
-		for(i in 0...c_length)
+		
+		for(i in 0...custom.length)
 		{
 			if(custom[i]==f)
 			{
@@ -245,13 +225,10 @@ class ParticleSystem {
 	
 	public function removeSpringByReference(s : Spring):Bool
 	{
-		var i : Int;
 		var n : Int;
 		n = -1;
-		var s_length : Int;
-		s_length = springs.length;
 		
-		for(i in 0...s_length)
+		for(i in 0...springs.length)
 		{
 			if(springs[i] == s)
 			{
@@ -279,12 +256,9 @@ class ParticleSystem {
 	
 	public function removeAttractionByReference(s : Attraction):Bool
 	{
-		var i : Int;
 		var n : Int;
 		n = -1;
-		var a_length : Int;
-		a_length = attractions.length;
-		for(i in 0...a_length)
+		for(i in 0...attractions.length)
 		{
 			if(attractions[i] == s)
 			{
@@ -312,12 +286,10 @@ class ParticleSystem {
 	
 	public function removeParticleByReference(p : Particle):Bool
 	{
-		var i : Int;
 		var n : Int;
 		n = -1;
-		var p_length : Int;
-		p_length = particles.length;
-		for(i in 0...p_length)
+		
+		for(i in 0...particles.length)
 		{
 			if(particles[i] == p)
 			{

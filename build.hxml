@@ -3,13 +3,13 @@
 # -js out/clothx.js
 
 # SWF 9 target
-#-swf9 out/flash/Grid.swf
-#-swf-version 10
-#-swf-header 640:480:60:ffffff
-#-cp src
-#-main Grid
-#--next
-#-cmd open out/flash/Grid.swf
+-swf9 out/flash/ClothSim.swf
+-swf-version 10
+-swf-header 640:480:60:ffffff
+-cp src
+-main ClothSim
+--next
+-cmd open out/flash/ClothSim.swf
 
 # ActionScript3 target
 # -as3 out
@@ -21,14 +21,14 @@
 # -php out
 
 # C++ target
--cpp out
--cp src
--main Grid
--lib nme
---remap flash:nme
--lib hxcpp
---next
--cmd open out/bin/Grid
+#-cpp out
+#-cp src
+#-main Grid
+#-lib nme
+#--remap flash:nme
+#-lib hxcpp
+#--next
+#-cmd open out/bin/Grid
 
 # Uncomment and place your main class with package
 # -main package.subpackage.ClassName

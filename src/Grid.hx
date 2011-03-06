@@ -30,16 +30,16 @@ class Grid extends Sprite {
     {
         super();
         flash.Lib.current.addChild(this);
-        gridSize = 16;
+        gridSize = 12;
         p_fixed = new Array();
         p_free = new Array();
         s = new ParticleSystem(new Vector3D(0, 0, 0),.2);
         s.setIntegrator(ParticleSystem.MODIFIED_EULER);
         
         var sx : Int;
-        sx = 120;
+        sx = 110;
         var sy : Int;
-        sy = 40;
+        sy = 50;
         var sp : Int;
         sp = 25;
         
@@ -78,11 +78,11 @@ class Grid extends Sprite {
         attractor.position.y = mouseY;
         
         
-        this.graphics.beginFill(0x333333,1);
-        this.graphics.drawCircle(attractor.position.x, attractor.position.y, 20);
+        this.graphics.beginFill(0xF2F2F2,1);
+        this.graphics.drawCircle(attractor.position.x, attractor.position.y, 60);
         this.graphics.endFill();
         
-        this.graphics.lineStyle(1, 0xFF0000);
+        this.graphics.lineStyle(1, 0xFF0044);
         
         for(i in 0...p_fixed.length)
         {

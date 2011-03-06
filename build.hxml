@@ -3,13 +3,13 @@
 # -js out/clothx.js
 
 # SWF 9 target
--swf9 out/flash/ClothSim.swf
+-swf9 out/flash/Cloud.swf
 -swf-version 10
--swf-header 640:480:60:ffffff
+-swf-header 500:400:31:ffffff
 -cp src
--main ClothSim
+-main Cloud
 --next
--cmd open out/flash/ClothSim.swf
+-cmd open out/flash/Cloud.swf
 
 # ActionScript3 target
 # -as3 out

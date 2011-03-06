@@ -31,9 +31,9 @@ class ClothSim extends Sprite {
         s = new ParticleSystem(new Vector3D(0, 3.2, 0), .06);
         s.setIntegrator(ParticleSystem.RUNGE_KUTTA);
         var sx : Int;
-        sx = 200;
+        sx = 150;
         var sy : Int;
-        sy = 80;
+        sy = 40;
         var sp : Int;
         sp = 25;
         
@@ -115,9 +115,6 @@ class ClothSim extends Sprite {
     
     function onFrame(_):Void
     {
-        var i : Int;
-        var j : Int;
-        
         particles[0][0].position.x = handle1.x;
         particles[0][0].position.y = handle1.y;
         

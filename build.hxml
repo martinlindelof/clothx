@@ -3,13 +3,13 @@
 # -js out/clothx.js
 
 # SWF 9 target
--swf9 out/flash/Cloud.swf
+-swf9 out/flash/Test.swf
 -swf-version 10
 -swf-header 500:400:31:ffffff
 -cp src
--main Cloud
+-main Test
 --next
--cmd open out/flash/Cloud.swf
+-cmd open out/flash/Test.swf
 
 # ActionScript3 target
 # -as3 out

@@ -43,7 +43,7 @@ class Attraction implements Force {
 		return minDistance;
 	}
 	
-	public function setMinimumDistance(d : Float)
+	public function setMinimumDistance(d : Float):Void
 	{
 		minDistance = d;
 		minDistanceSquared = d*d;

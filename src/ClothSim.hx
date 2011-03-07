@@ -17,6 +17,8 @@ class ClothSim extends Sprite {
     
     var handle1 : Sprite;
     var handle2 : Sprite;
+    
+    var overlay : Sprite;
 
     static function main()
     {
@@ -72,7 +74,7 @@ class ClothSim extends Sprite {
         
         handle1 = new Sprite();
         this.addChild(handle1);
-        handle1.graphics.beginFill(0x000000,.5);
+        handle1.graphics.beginFill(0xd9d9d9);
         handle1.graphics.drawCircle(0,0,20);
         handle1.graphics.endFill();
         
@@ -82,7 +84,7 @@ class ClothSim extends Sprite {
         
         handle2 = new Sprite();
         this.addChild(handle2);
-        handle2.graphics.beginFill(0x000000,.5);
+        handle2.graphics.beginFill(0xd9d9d9);
         handle2.graphics.drawCircle(0,0,20);
         handle2.graphics.endFill();
         handle2.x = particles[0][gridSize-1].position.x;
@@ -95,7 +97,16 @@ class ClothSim extends Sprite {
         handle1.addEventListener(MouseEvent.MOUSE_DOWN, handleMouse);
         handle2.addEventListener(MouseEvent.MOUSE_DOWN, handleMouse);
         
-        this.addEventListener(Event.ENTER_FRAME, onFrame);
+        overlay = new Sprite();
+        overlay.graphics.beginFill(0xFFFFFF);
+        overlay.graphics.drawRect(0, 0, stage.stageWidth, stage.stageHeight);
+        overlay.graphics.endFill();
+        overlay.alpha = .75;
+        stage.addChild(overlay);
+        for(k in 0...10) s.tick(1);
+        onFrame(null);
+        stage.addEventListener(Event.MOUSE_LEAVE, onLeave);
+        stage.addEventListener(MouseEvent.MOUSE_OVER, onEnter);
     }
     
     function handleMouse(e:MouseEvent):Void
@@ -111,6 +122,18 @@ class ClothSim extends Sprite {
             handle2.stopDrag();
             stage.removeEventListener(MouseEvent.MOUSE_UP, handleMouse);
         }        
+    }
+    
+    function onEnter(_)
+    {
+        overlay.visible = false;
+        stage.addEventListener(Event.ENTER_FRAME, onFrame);
+    }
+    
+    function onLeave(_)
+    {
+        overlay.visible = true;
+        stage.removeEventListener(Event.ENTER_FRAME, onFrame);
     }
     
     function onFrame(_):Void

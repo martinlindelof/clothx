@@ -4,6 +4,7 @@ import flash.Lib;
 import flash.display.Sprite;
 import flash.geom.Vector3D;
 import flash.events.Event;
+import flash.events.MouseEvent;
 
 import clothx.physics.ParticleSystem;
 import clothx.physics.Particle;
@@ -19,7 +20,8 @@ class Grid extends Sprite {
     
     var gridSize : Int;
     var particles : Array<Particle>;
-    
+
+    var overlay : Sprite;    
 
     static function main():Void
     {
@@ -65,8 +67,28 @@ class Grid extends Sprite {
             }
         }
         
-        this.addEventListener(Event.ENTER_FRAME, onFrame);
+        overlay = new Sprite();
+        overlay.graphics.beginFill(0xFFFFFF);
+        overlay.graphics.drawRect(0, 0, stage.stageWidth, stage.stageHeight);
+        overlay.graphics.endFill();
+        overlay.alpha = .75;
+        stage.addChild(overlay);
+        onFrame(null);
+        stage.addEventListener(Event.MOUSE_LEAVE, onLeave);
+        stage.addEventListener(MouseEvent.MOUSE_OVER, onEnter);
         
+    }
+    
+    function onEnter(_)
+    {
+        overlay.visible = false;
+        stage.addEventListener(Event.ENTER_FRAME, onFrame);
+    }
+    
+    function onLeave(_)
+    {
+        overlay.visible = true;
+        stage.removeEventListener(Event.ENTER_FRAME, onFrame);
     }
     
     function onFrame(_):Void

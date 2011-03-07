@@ -223,6 +223,12 @@ class ParticleSystem {
 		}
 	}
 	
+	public function removeSpring(i : Int):Void
+	{
+	   springs[i] = null;
+	   springs.splice(i, 1);
+	}
+	
 	public function removeSpringByReference(s : Spring):Bool
 	{
 		var n : Int;

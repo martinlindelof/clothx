@@ -77,6 +77,11 @@ class ClothSim extends Sprite {
         handle1.graphics.beginFill(0xd9d9d9);
         handle1.graphics.drawCircle(0,0,20);
         handle1.graphics.endFill();
+        handle1.graphics.lineStyle(1,0x333333);
+        handle1.graphics.moveTo(0,-3);
+        handle1.graphics.lineTo(0,4);
+        handle1.graphics.moveTo(4,0);
+        handle1.graphics.lineTo(-3,0);
         
         handle1.x = particles[0][0].position.x;
         handle1.y = particles[0][0].position.y;
@@ -87,6 +92,12 @@ class ClothSim extends Sprite {
         handle2.graphics.beginFill(0xd9d9d9);
         handle2.graphics.drawCircle(0,0,20);
         handle2.graphics.endFill();
+        handle2.graphics.lineStyle(1,0x333333);
+        handle2.graphics.moveTo(0,-3);
+        handle2.graphics.lineTo(0,4);
+        handle2.graphics.moveTo(4,0);
+        handle2.graphics.lineTo(-3,0);
+        
         handle2.x = particles[0][gridSize-1].position.x;
         handle2.y = particles[0][gridSize-1].position.y;
         
@@ -138,6 +149,15 @@ class ClothSim extends Sprite {
     
     function onFrame(_):Void
     {
+        if(handle1.x > stage.stageWidth) handle1.x = stage.stageWidth;
+        else if(handle1.x < 0) handle1.x = 0;
+        if(handle1.y > stage.stageHeight) handle1.y = stage.stageHeight;
+        else if(handle1.y < 0) handle1.y = 0;
+        if(handle2.x > stage.stageWidth) handle2.x = stage.stageWidth;
+        else if(handle2.x < 0) handle2.x = 0;
+        if(handle2.y > stage.stageHeight) handle2.y = stage.stageHeight;
+        else if(handle2.y < 0) handle2.y = 0;
+        
         particles[0][0].position.x = handle1.x;
         particles[0][0].position.y = handle1.y;
         

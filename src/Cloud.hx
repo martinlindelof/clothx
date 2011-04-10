@@ -29,7 +29,7 @@ class Cloud extends Sprite
         mouse = s.makeParticle();
         mouse.makeFixed();
         others = new Array();
-        for(i in 0...600)
+        for(i in 0...1000)
         {
             others[i] = s.makeParticle(1.0,new Vector3D(Math.random()*stage.stageWidth, Math.random()*stage.stageHeight,0));
             s.makeAttraction(mouse, others[i], 5000, 50);

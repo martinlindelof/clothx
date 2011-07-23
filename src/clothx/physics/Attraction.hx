@@ -26,6 +26,9 @@ class Attraction implements Force {
 	
 	var on : Bool;
 	
+	/**
+	 * @constructor
+	 */
 	public function new(a : Particle, b : Particle, strength : Float, minDistance : Float)
 	{
 		this.a = a;

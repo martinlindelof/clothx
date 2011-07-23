@@ -25,7 +25,7 @@ class Spring {
 	
 	var on : Bool;
 	
-	public function new(a : Particle, b : Particle, springConstant : Float, damping : Float, restLength : Float):Void
+	public function new(a : Particle, b : Particle, springConstant : Float, damping : Float, restLength : Float) : Void
 	{
 		this.a = a;
 		this.b = b;
@@ -35,82 +35,82 @@ class Spring {
 		on = true;
 	}
 	
-	public function turnOn():Void
+	public function turnOn() : Void
 	{
 		on = true;
 	}
 	
-	public function turnOff():Void
+	public function turnOff() : Void
 	{
 		on = false;
 	}
 	
-	public function isOn():Bool
+	public function isOn() : Bool
 	{
 		return on;
 	}
 	
-	public function isOff():Bool
+	public function isOff() : Bool
 	{
 		return !on;
 	}
 	
-	public function currentLength():Float
+	public function currentLength() : Float
 	{
 		return Vector3D.distance(a.position,b.position);
 	}
 	
-	public function getStrength():Float
+	public function getStrength() : Float
 	{
 		return springConstant;
 	}
 	
-	public function setStrength(ks : Float):Void
+	public function setStrength(ks : Float) : Void
 	{
 		springConstant = ks;
 	}
 	
-	public function getDamping():Float
+	public function getDamping() : Float
 	{
 		return damping;
 	}
 	
-	public function setDamping(d : Float):Void
+	public function setDamping(d : Float) : Void
 	{
 		damping = d;
 	}
 	
-	public function getRestLength():Float
+	public function getRestLength() : Float
 	{
 		return restLength;
 	}
 	
-	public function setRestLength(l : Float):Void
+	public function setRestLength(l : Float) : Void
 	{
 		restLength = l;
 	}
 	
-	function setA(p : Particle):Void
+	function setA(p : Particle) : Void
 	{
 		a = p;
 	}
 	
-	function setB(p : Particle):Void
+	function setB(p : Particle) : Void
 	{
 		b = p;
 	}
 	
-	public function getOneEnd():Particle
+	public function getOneEnd() : Particle
 	{
 		return a;
 	}
 	
-	public function getTheOtherEnd():Particle
+	public function getTheOtherEnd() : Particle
 	{
 		return b;
 	}
 	
-	public function apply():Void
+	public function apply() : Void
 	{
 		if(on && (a.isFree() || b.isFree()))
 		{

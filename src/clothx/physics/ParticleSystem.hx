@@ -35,7 +35,7 @@ class ParticleSystem {
 	
 	var hasDeadParticles : Bool;
 	
-	public function new(?gravity : Vector3D, drag : Float = 0.001):Void
+	public function new(?gravity : Vector3D, drag : Float = 0.001) : Void
 	{
 		hasDeadParticles = false;
 		integrator = new RungeKuttaIntegrator(this);
@@ -49,7 +49,7 @@ class ParticleSystem {
 		this.drag = drag;
 	}
 	
-	public function setIntegrator(integrator : Int):Void
+	public function setIntegrator(integrator : Int) : Void
 	{
 		switch(integrator)
 		{
@@ -60,22 +60,22 @@ class ParticleSystem {
 		}
 	}
 	
-	public function setGravity(gravity : Vector3D):Void
+	public function setGravity(gravity : Vector3D) : Void
 	{
 		this.gravity = gravity;
 	}
 	
-	public function setDrag(d : Float):Void
+	public function setDrag(d : Float) : Void
 	{
         this.drag = d;
 	}
 	
-	public function tick(t : Float = 1):Void
+	public function tick(t : Float = 1) : Void
 	{
         integrator.step(t);
 	}
 	
-	public function makeParticle(mass : Float = 1, ?position : Vector3D):Particle
+	public function makeParticle(mass : Float = 1, ?position : Vector3D) : Particle
 	{
 		var p:Particle;
 		p = new Particle(mass, position);
@@ -83,7 +83,7 @@ class ParticleSystem {
 		return p;
 	}
 	
-	public function makeSpring(a : Particle, b : Particle, springConstant : Float, damping : Float, restLength : Float):Spring
+	public function makeSpring(a : Particle, b : Particle, springConstant : Float, damping : Float, restLength : Float) : Spring
 	{
 		var s : Spring;
 		s = new Spring(a, b, springConstant, damping, restLength);
@@ -91,7 +91,7 @@ class ParticleSystem {
 		return s;
 	}
 	
-	public function makeAttraction(a : Particle, b : Particle, strength : Float, minDistance : Float):Attraction
+	public function makeAttraction(a : Particle, b : Particle, strength : Float, minDistance : Float) : Attraction
 	{
 		var m : Attraction;
 		m = new Attraction(a, b, strength, minDistance);
@@ -99,7 +99,7 @@ class ParticleSystem {
 		return m;
 	}
 	
-	public function clear():Void
+	public function clear() : Void
 	{
 		var i : Int;
 		
@@ -112,7 +112,7 @@ class ParticleSystem {
 		attractions = new Array<Attraction>();
 	}
 	
-	public function applyForces():Void
+	public function applyForces() : Void
 	{
 		if(gravity.x != 0 || gravity.y != 0 || gravity.x != 0) // not gravity.z ?
 		{
@@ -135,7 +135,7 @@ class ParticleSystem {
 		for(i in 0...custom.length) custom[i].apply();
 	}
 	
-	public function clearForces():Void
+	public function clearForces() : Void
 	{
 		for( i in 0...particles.length)
 		{
@@ -147,58 +147,58 @@ class ParticleSystem {
 		}
 	}
 	
-	public function numberOfParticles():Int
+	public function numberOfParticles() : Int
 	{
 		return particles.length;
 	}
 	
-	public function numberOfSprings():Int
+	public function numberOfSprings() : Int
 	{
 		return springs.length;
 	}
 	
-	public function numberOfAttractions():Int
+	public function numberOfAttractions() : Int
 	{
 		return attractions.length;
 	}
 	
-	public function getParticle(i : Int):Particle
+	public function getParticle(i : Int) : Particle
 	{
 		return particles[i];
 	}
 	
-	public function getSpring(i : Int):Spring
+	public function getSpring(i : Int) : Spring
 	{
 		return springs[i];
 	}
 	
-	public function getAttraction(i : Int):Attraction
+	public function getAttraction(i : Int) : Attraction
 	{
 		return attractions[i];
 	}
 	
-	public function addCustomForce(f : Force):Void
+	public function addCustomForce(f : Force) : Void
 	{
 		custom.push(f);
 	}
 	
-	public function numberOfCustomForces():Int
+	public function numberOfCustomForces() : Int
 	{
 		return custom.length;
 	}
 	
-	public function getCustomForce(i : Int):Force
+	public function getCustomForce(i : Int) : Force
 	{
 		return custom[i];
 	}
 	
-	public function removeCustomForce(i : Int):Void
+	public function removeCustomForce(i : Int) : Void
 	{
 		custom[i] = null;
 		custom.splice(i, 1);
 	}
 	
-	public function removeCustomForceByReference(f : Force):Bool
+	public function removeCustomForceByReference(f : Force) : Bool
 	{
 		var n : Int;
 		n = -1;
@@ -223,13 +223,13 @@ class ParticleSystem {
 		}
 	}
 	
-	public function removeSpring(i : Int):Void
+	public function removeSpring(i : Int) : Void
 	{
 	   springs[i] = null;
 	   springs.splice(i, 1);
 	}
 	
-	public function removeSpringByReference(s : Spring):Bool
+	public function removeSpringByReference(s : Spring) : Bool
 	{
 		var n : Int;
 		n = -1;
@@ -254,13 +254,13 @@ class ParticleSystem {
 		}
 	}
 	
-	public function removeAttraction(i : Int):Void
+	public function removeAttraction(i : Int) : Void
 	{
 		attractions[i] = null;
 		attractions.splice(i, 1);
 	}
 	
-	public function removeAttractionByReference(s : Attraction):Bool
+	public function removeAttractionByReference(s : Attraction) : Bool
 	{
 		var n : Int;
 		n = -1;
@@ -284,13 +284,13 @@ class ParticleSystem {
 		}
 	}
 	
-	public function removeParticle(i : Int):Void
+	public function removeParticle(i : Int) : Void
 	{
 		particles[i] = null;
 		particles.splice(i, 1);
 	}
 	
-	public function removeParticleByReference(p : Particle):Bool
+	public function removeParticleByReference(p : Particle) : Bool
 	{
 		var n : Int;
 		n = -1;

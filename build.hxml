@@ -1,34 +1,28 @@
-# Uncomment the desirable target
-# JavaScript target
-# -js out/clothx.js
-
-# SWF 9 target
--swf9 out/flash/ClothSim.swf
--swf-version 10
--swf-header 500:400:31:ffffff
+#build file
 -cp src
--main ClothSim
---next
--cmd open out/flash/ClothSim.swf
+-cp src_test
+-main Cloud
 
-# ActionScript3 target
-# -as3 out
+# @tm-autocomplete
 
-# Neko target
-# -neko out/clothx.n
-
-# PHP target
-# -php out
-
-# C++ target
-#-cpp out
-#-cp src
-#-main Grid
-#-lib nme
-#--remap flash:nme
-#-lib hxcpp
+#compile
+#-swf-header 640:480:31:ffffff
+#-swf-version 10
+#-swf9 bin/test.swf
+#post compile
 #--next
-#-cmd open out/bin/Grid
+#-cmd open bin/test.swf
 
-# Uncomment and place your main class with package
-# -main package.subpackage.ClassName
+--next
+
+-cp src
+-cp src_test
+-main Cloud
+-cpp bin/cpp/
+
+-lib nme
+--remap flash:nme
+
+#post compile
+--next
+-cmd bin/Cloud/

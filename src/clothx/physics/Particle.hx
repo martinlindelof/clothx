@@ -23,10 +23,10 @@ class Particle {
 	
 	var dead : Bool;
 	
-	public function new(mass : Float, ?position : Vector3D):Void
+	public function new(mass : Float, ?position : Vector3D) : Void
 	{
 		this.mass = mass;
-		this.position = (position!=null) ? position : new Vector3D();
+		this.position = position!=null ? position : new Vector3D();
 		
 		velocity = new Vector3D();
 		force = new Vector3D();
@@ -36,38 +36,38 @@ class Particle {
 		dead = false;
 	}
 	
-	public function distanceTo(p : Particle):Float
+	public function distanceTo(p : Particle) : Float
 	{
 		return Vector3D.distance(this.position, p.position);
 	}
 	
-	public function makeFixed():Void
+	public function makeFixed() : Void
 	{
 		fixed = true;
 		velocity.x = 0; velocity.y = 0; velocity.z = 0;
 	}
 	
-	public function makeFree():Void
+	public function makeFree() : Void
 	{
 		fixed = false;
 	}
 	
-	public function isFixed():Bool
+	public function isFixed() : Bool
 	{
 		return fixed;
 	}
 	
-	public function isFree():Bool
+	public function isFree() : Bool
 	{
 		return !fixed;
 	}
 	
-	public function setMass(m : Float):Void
+	public function setMass(m : Float) : Void
 	{
 		mass = m;
 	}
 	
-	public function reset():Void
+	public function reset() : Void
 	{
 		age = 0;
 		dead = false;
@@ -77,7 +77,7 @@ class Particle {
 		mass = 1;
 	}
 	
-	public function toString():String
+	public function toString() : String
 	{
 		return("[object Particle]\tm:" + mass + " [" + position.x + ", " + position.y + ", " + position.z +"]");
 	}

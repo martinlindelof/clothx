@@ -30,7 +30,7 @@ class RungeKuttaIntegrator implements Integrator {
 	var k4Forces : Array<Vector3D>;
 	var k4Velocities : Array<Vector3D>;
 	
-	public function new(s : ParticleSystem):Void
+	public function new(s : ParticleSystem) : Void
 	{
 		this.s = s;
 		
@@ -46,7 +46,7 @@ class RungeKuttaIntegrator implements Integrator {
 		k4Velocities = new Array();
 	}
 	
-	function allocateParticles():Void
+	function allocateParticles() : Void
 	{
 		while(s.particles.length > originalPositions.length)
 		{
@@ -79,7 +79,7 @@ class RungeKuttaIntegrator implements Integrator {
     var k3Force : Vector3D;
     var k4Force : Vector3D;
 	
-	public function step(t : Float):Void
+	public function step(t : Float) : Void
 	{
 	   
 		particles = s.particles;

@@ -19,12 +19,12 @@ class ModifiedEulerIntegrator implements Integrator {
 
 	var s : ParticleSystem;
 	
-	public function new(s : ParticleSystem):Void
+	public function new(s : ParticleSystem) : Void
 	{
 		this.s = s;
 	}
 	
-	public function step(t : Float):Void
+	public function step(t : Float) : Void
 	{
 		 var particles : Array<Particle>;
 		 particles = s.particles;

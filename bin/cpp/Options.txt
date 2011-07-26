@@ -1,6 +1,0 @@
-cpp
-haxe_207
-hxcpp
-nme
-true
-/Users/martin/Documents/haxelib/hxcpp/

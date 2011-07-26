@@ -1,12 +1,12 @@
 package ;
 
+import clothx.physics.Particle;
+import clothx.physics.ParticleSystem;
 import flash.Lib;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.geom.Vector3D;
-import clothx.physics.ParticleSystem;
-import clothx.physics.Particle;
 
 class Cloud extends Sprite
 {

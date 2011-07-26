@@ -1,0 +1,14 @@
+#build file
+-cp src
+-cp src_test
+-main Cloud
+
+-lib nme
+-lib hxcpp
+--remap flash:nme
+
+-cpp bin/cpp
+
+#post compile
+--next
+-cmd bin/cpp/Cloud

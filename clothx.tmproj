@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>src/clothx/geom/Vector3D.hx</string>
+	<string>src_test/Cloud.hx</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -15,6 +15,8 @@
 			<string>assets</string>
 		</dict>
 		<dict>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>bin</string>
 			<key>regexFolderFilter</key>
@@ -24,9 +26,9 @@
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>build.hxml</string>
+			<string>build-swf.hxml</string>
 			<key>lastUsed</key>
-			<date>2011-07-16T10:00:49Z</date>
+			<date>2011-07-26T17:10:26Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -48,33 +50,25 @@
 			<key>sourceDirectory</key>
 			<string>src_test</string>
 		</dict>
+		<dict>
+			<key>filename</key>
+			<string>build-cpp.hxml</string>
+			<key>lastUsed</key>
+			<date>2011-07-26T17:21:29Z</date>
+		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>build.hxml</key>
+		<key>build-cpp.hxml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>18</integer>
 				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>src/clothx/geom/Vector3D.hx</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>25</integer>
-				<key>line</key>
-				<integer>149</integer>
+				<integer>13</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -86,9 +80,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>26</integer>
+				<integer>28</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -98,9 +92,8 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>build.hxml</string>
+		<string>build-cpp.hxml</string>
 		<string>src_test/Cloud.hx</string>
-		<string>src/clothx/geom/Vector3D.hx</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
@@ -108,6 +101,21 @@
 	<true/>
 	<key>treeState</key>
 	<dict>
+		<key>bin</key>
+		<dict>
+			<key>isExpanded</key>
+			<true/>
+			<key>subItems</key>
+			<dict>
+				<key>cpp</key>
+				<dict>
+					<key>isExpanded</key>
+					<true/>
+					<key>subItems</key>
+					<dict/>
+				</dict>
+			</dict>
+		</dict>
 		<key>src</key>
 		<dict>
 			<key>isExpanded</key>
@@ -120,7 +128,7 @@
 					<true/>
 					<key>subItems</key>
 					<dict>
-						<key>geom</key>
+						<key>physics</key>
 						<dict>
 							<key>isExpanded</key>
 							<true/>
